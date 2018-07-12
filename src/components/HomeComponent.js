@@ -6,22 +6,15 @@ import { baseUrl } from '../shared/baseUrl';
 function RenderCard({item, isLoading, errMess}){
 
     if (isLoading) {
-        return (
-            <div className = "container">
-                <div className = "row">
-                    <Loading />
-                </div>
-            </div>
+        return (            
+            <Loading />
+               
         );
     }
 
     else if (errMess) {
         return (
-            <div className = "container">
-                <div className = "row">
-                    <h4> {errMess} </h4>
-                </div>
-            </div>
+            <h4> {errMess} </h4>
         );
     }
     else
