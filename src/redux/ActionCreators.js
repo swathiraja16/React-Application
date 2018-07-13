@@ -1,6 +1,5 @@
 import * as ActionTypes from './ActionTypes';
 import {baseUrl} from '../shared/baseUrl';
-import { Errors } from '../../node_modules/react-redux-form';
 
 export const addComment = (comment) =>({
     type: ActionTypes.ADD_COMMENT,
@@ -31,8 +30,8 @@ export const postComment = (dishId, rating, author, comment) => (dispatch) => {
         }
     },
     error => {
-        var error = new Error(error.meesage);
-        throw error;
+        var errmess = new Error(error.meesage);
+        throw errmess;
     })
     .then(response => response.json())
     .then(response => dispatch(addComment(response)))
@@ -70,8 +69,8 @@ export const postFeedback = (firstname, lastname, telnum, email, agree, contactt
         }
     },
     error => {
-        var error = new Error(error.meesage);
-        throw error;
+        var errmess = new Error(error.meesage);
+        throw errmess;
     })
     .then(response => response.json())
     .then(response => dispatch(addFeedback(response)))
